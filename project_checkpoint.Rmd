@@ -1,0 +1,19 @@
+
+
+```{r}
+source("get_my_sites.R")
+data <- get_my_sites("9085734185")
+data
+```
+
+```{r}
+hist(data$Y, breaks = 100, main = "Distribution of Y", xlab = "Y")
+```
+
+
+```{r}
+class(data)
+str(data, max.level = 1)   # top-level pieces of the object
+dim(data$Y)                # expect 30 x 72 or 72 x 30
+sum(!is.na(data$Y))        # expect 1938
+```
